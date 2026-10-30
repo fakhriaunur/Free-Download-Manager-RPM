@@ -7,8 +7,6 @@ LICENSE="Proprietary"
 DESC="Free Download Manager is a powerful, modern download accelerator and organizer for Linux"
 BUILD_DIR=$(mktemp -d)
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-QT5="qt5-qtbase"
-QT6="qt6-qtbase"
 
 # Clean previous .rpm
 rm -f ./*.rpm
@@ -52,7 +50,7 @@ fpm -s dir -t rpm \
   --url "$OFFICIAL_SITE" \
   --description "$DESC" \
   -d "libtorrent" \
-  -d "$QT6" \
+  -d "qt5-qtbase" \
   -a x86_64 \
   --prefix / \
   opt usr/share
